@@ -2,6 +2,17 @@
 
 Alien Shell
 
+## Installation
+
+There are no installation instructions because this isn't ready for general use. I will provide instructions when the below issues are fixed.
+
+## Known issues / TODO
+
+- [ ] Ctrl+c, Ctrl+z, ... does not work
+- [ ] Tab completion can be improved
+- [ ] No history
+- [ ] When in a process, keyboard input does not work
+
 ## Screenshots
 
 ![banner](https://github.com/alien-sh/alien/blob/master/alien.png)
