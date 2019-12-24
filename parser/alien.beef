@@ -1,0 +1,7 @@
+left_paren symbol => atom_start { command: right.raw, args: [], start: left.index }
+atom_start symbol|string|number|date|boolean|atom|escaped_atom => atom_start { command: left.command, args: [...left.args, right], start: left.start }
+atom_start right_paren => atom { command: left.command, args: left.args, start: left.start, end: right.index }
+
+backtick atom => escaped_atom { command: right.command, args: right.args, start: left.index, end: right.end }
+
+atom eof => alien { program: left }
