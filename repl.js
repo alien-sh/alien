@@ -9,6 +9,7 @@ class AlienRepl extends repl {
     this.core = core;
     this.keyEaters["\r"] = [
       function(key) {
+        if (this.isBusy) return;
         if (this.currentInput && hasEqualParens(this.currentInput)) {
           this.stdout.write("\n");
           this.processInput();
@@ -34,7 +35,11 @@ class AlienRepl extends repl {
     this.currentOutput = "";
     this.stdout.write("\n");
     this.isBusy = true;
+    this.stdin.pause();
+    this.stdin.setRawMode(false);
     await this.core.handle(this.core, src);
+    this.stdin.setRawMode(true);
+    this.stdin.resume();
     this.isBusy = false;
     this.stdout.write("\n");
     this.preprint();

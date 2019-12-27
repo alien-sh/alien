@@ -11,7 +11,7 @@ There are no installation instructions because this isn't ready for general use.
 - [ ] Ctrl+c, Ctrl+z, ... does not work
 - [X] Tab completion is buggy
 - [ ] No history
-- [ ] When in a process, keyboard input does not work
+- [X] When in a process, keyboard input does not work
 
 ## Screenshots
 
