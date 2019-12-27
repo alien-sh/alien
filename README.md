@@ -9,7 +9,7 @@ There are no installation instructions because this isn't ready for general use.
 ## Known issues / TODO
 
 - [ ] Ctrl+c, Ctrl+z, ... does not work
-- [ ] Tab completion can be improved
+- [X] Tab completion is buggy
 - [ ] No history
 - [ ] When in a process, keyboard input does not work
 
