@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "rm -rf build && mkdir build && cd build && cmake .. && cmake --build ."
+    "preinstall": "mkdir build && cd build && cmake .. && cmake --build ."
   },
   "bin": {
     "alien": "./build/alien",
