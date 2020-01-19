@@ -15,8 +15,8 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@alien.sh/repl": "@alien.sh/repl",
-    "@alien.sh/signals": "@alien.sh/signals",
+    "@alien.sh/repl": "^1.0.0",
+    "@alien.sh/signals": "^1.0.0",
     "bean-parser": "^1.0.7",
     "chalk": "^3.0.0",
     "denque": "^1.4.1",
