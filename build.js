@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = requre("fs");
 const path = requre("path");
 const { execSync } = requre("child_process");
