@@ -1,6 +1,7 @@
 const REPL = require("./repl");
 const keys = require("@alien.sh/repl/keys");
 const builtins = require("./builtins");
+const eventEmitter = require("events");
 const { generate } = require("./parser/index")({ scope: { builtins } });
 
 const scope = {
@@ -33,12 +34,21 @@ const scope = {
   }
 };
 
+const SIGTSTP = 18;
+
 const handle = async (core, line) => {
   const atom = await core.generate(line);
   const proc = await atom.eval(scope, "inherit");
   if (proc && proc.results) {
-    const results = await proc.results();
-    return results;
+    return new Promise(async resolve => {
+      core.signals.on(SIGTSTP, function() {
+        console.log("meow");
+
+        resolve();
+      });
+      const results = await proc.results();
+      return resolve(results);
+    });
   }
 };
 
@@ -55,6 +65,8 @@ const start = core => {
   }
 };
 
+const signals = new eventEmitter();
+
 const core = {
   start,
   handle,
@@ -62,8 +74,10 @@ const core = {
   generate,
   REPL,
   keys,
+  signals,
   onBeforePrint: [],
-  onBeforeProcess: []
+  onBeforeProcess: [],
+  onSig: []
 };
 
 module.exports = core;
