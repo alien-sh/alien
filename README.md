@@ -15,8 +15,8 @@ There are no installation instructions because this isn't ready for general use.
 
 ## Screenshots
 
-![banner](https://github.com/alien-sh/alien/blob/master/alien.png)
+![banner](https://github.com/alien-sh/alien/raw/master/alien.png)
 
 Commands:
 
-![commands](https://github.com/alien-sh/alien/blob/master/screenshot.png)
+![commands](https://github.com/alien-sh/alien/raw/master/screenshot.png)
