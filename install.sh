@@ -13,7 +13,11 @@ error() {
 run() {
   command="$@"
   if [ -z ${noroot+x} ]; then
-    su root -c "$command"
+    if [ -x "$(command -v sudo)" ]; then
+      sudo $command
+    else
+      su root -c "$command"
+    fi
   else
     $command
   fi
