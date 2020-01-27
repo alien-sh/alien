@@ -148,6 +148,7 @@ homesetup() {
     rm -rf $configdir
   fi
   npm i -S "@alien.sh/core-plugins"
+  echo 'module.exports = [require("@alien.sh/core-plugins")];' > "plugins.js"
 }
 
 main() {
