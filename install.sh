@@ -3,11 +3,11 @@
 version="0.0.11"
 
 info() {
-  echo "\e[92m$1\e[0m"
+  echo -e "\e[92m$1\e[0m"
 }
 
 error() {
-  echo "\e[91mError! $1\e[0m"
+  echo -e "\e[91mError! $1\e[0m"
 }
 
 run() {
@@ -144,6 +144,7 @@ homesetup() {
     cd $configdir
     npm init -y
     mv "package.json" ..
+    cd ..
     rm -rf $configdir
   fi
   npm i -S "@alien.sh/core-plugins"
