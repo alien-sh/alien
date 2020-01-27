@@ -3,11 +3,11 @@
 version="0.0.11"
 
 info() {
-  echo -e "\e[92m$1\e[0m"
+  echo "\e[92m$1\e[0m"
 }
 
 error() {
-  echo -e "\e[91mError! $1\e[0m"
+  echo "\e[91mError! $1\e[0m"
 }
 
 run() {
@@ -124,7 +124,8 @@ install() {
   info "Installing dependencies"
   npm install
   info "Installing in $prefix"
-  run "npm install --prefix $prefix -g . && node build.js $prefix"
+  run "npm install --prefix $prefix -g ."
+  run "node build.js $prefix"
 }
 
 homesetup() {
