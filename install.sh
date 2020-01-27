@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-version="0.0.10"
+version="0.0.11"
 
 info() {
   echo -e "\e[92m$1\e[0m"
