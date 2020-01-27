@@ -31,5 +31,4 @@ int main(int argc, char *argv[]) {
 
   }
 
-  //system("node index.js");
 }

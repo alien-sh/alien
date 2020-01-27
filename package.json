@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "./build.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "alien": "./build/alien",
     "alien-js": "./index.js"
   },
   "keywords": [],
@@ -17,10 +15,6 @@
   "dependencies": {
     "@alien.sh/repl": "^1.0.0",
     "@alien.sh/signals": "^1.0.0",
-    "bean-parser": "^1.0.7",
-    "chalk": "^3.0.0",
-    "denque": "^1.4.1",
-    "mongodb": "^3.3.5",
-    "node-pty": "^0.9.0"
+    "bean-parser": "^1.0.7"
   }
 }

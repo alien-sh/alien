@@ -7,5 +7,7 @@ const { execSync } = require("child_process");
 const buildDir = path.join(__dirname, "build");
 fs.mkdirSync(buildDir, { recursive: true }, () => {});
 
-execSync("cmake ..", { cwd: buildDir });
-execSync("cmake --build .", { cwd: buildDir });
+const prefix = process.argv[2];
+
+execSync(`cmake -DCMAKE_INSTALL_PREFIX:PATH=${prefix} ..`, { cwd: buildDir });
+execSync("cmake --build . --target install", { cwd: buildDir });
