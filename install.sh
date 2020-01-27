@@ -41,7 +41,7 @@ checkdeps() {
 getvars() {
   bundle="bundle.tar.gz"
   dirname="alien*"
-  tarball="https://api.github.com/repos/alien-sh/alien/releases/$version.tar.gz"
+  tarball="https://github.com/alien-sh/alien/releases/$version.tar.gz"
   if [ -d "./.git" ]; then
     checkout="YES"
   fi
